@@ -193,11 +193,12 @@ header {
 }
 .brand-name {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 900;
   color: #000000;
   font-size: 16.5px;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  align-items: relative;
 }
 .brand-name span {
   display: block;
@@ -207,6 +208,7 @@ header {
   color: #111111;
   font-weight: 500;
   margin-top: 2px;
+  justify-content: contain;
 }
 nav.links {
   display: flex;
