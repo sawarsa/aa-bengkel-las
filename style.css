@@ -1207,25 +1207,30 @@ textarea:focus-visible {
 /* ============ FLOATING WHATSAPP BUTTON ============ */
 .wa-float {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
   z-index: 200;
 }
 .wa-float-btn {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: 100%;
   background: #25d366;
   color: #fff;
-  padding: 14px 20px 14px 14px;
-  border-radius: 50px;
-  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.5);
+  padding: 16px 20px;
+  border-radius: 0;
+  box-shadow: 0 -8px 24px -8px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: wa-blink 1.6s ease-in-out infinite;
+  border-radius: 10rem;
 }
 .wa-float-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
 }
 .wa-float-icon {
   width: 26px;
@@ -1242,35 +1247,29 @@ textarea:focus-visible {
 .wa-float-label-short {
   display: none;
 }
-.wa-float-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50px;
-  border: 2px solid #25d366;
-  animation: wa-pulse 2.4s ease-out infinite;
-}
-@keyframes wa-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
+
+/* Animasi kedip: opacity + glow naik turun */
+@keyframes wa-blink {
+  0%,
   100% {
-    transform: scale(1.12);
-    opacity: 0;
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 26px 8px rgba(37, 211, 102, 0.7);
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .wa-float-ring {
+  .wa-float-btn {
     animation: none;
   }
 }
+
 @media (max-width: 680px) {
-  .wa-float {
-    right: 16px;
-    bottom: 16px;
-  }
   .wa-float-btn {
-    padding: 12px 16px 12px 12px;
+    padding: 14px 16px;
     gap: 8px;
   }
   .wa-float-icon {
