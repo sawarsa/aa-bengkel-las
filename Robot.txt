@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aabengkellas-batam.com/sitemap.xml
+Sitemap: https://www.aabengkellas.com/sitemap.xml
